@@ -24,6 +24,10 @@ class ProductManager {
     }
 
     addProduct = (title, description, price, thumbnail, code, stock) => {
+        if (!title || !description || !price || !thumbnail || !code || !stock) {
+            return console.log('Todos los campos son necesarios')
+        }
+        
         const product = {
             id: this.getProductId(),
             title,
